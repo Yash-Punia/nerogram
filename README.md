@@ -1,2 +1,2 @@
-# nerogram
-Social Media Web Application 
+# Nerogram
+Social Media Web Application created using React + Firebase
