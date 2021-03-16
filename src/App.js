@@ -1,9 +1,10 @@
 import './App.css';
+import { Home } from './pages';
 
 function App() {
   return (
-    <div className="App">
-      <p>Nerogram</p>
+    <div className="app">
+      <Home/>
     </div>
   );
 }
