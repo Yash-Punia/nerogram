@@ -1,7 +1,7 @@
 .signInButton {
     color: whitesmoke;
     background-color: #ff0066;
-    max-width: 5em;
+    width: 100px;
     text-align: center;
     padding: 8px 16px;
     border-radius: 0.5em;

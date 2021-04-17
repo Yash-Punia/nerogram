@@ -15,3 +15,14 @@ export const signInWithGoogle = async () => {
 
     return user; 
 }
+
+export const logout = async () => {
+    let logoutSuccess;
+    await auth.signOut().then(()=> {
+        logoutSuccess = true;
+    }).catch((err) => {
+        console.log(err.message);
+    })
+
+    return logoutSuccess; 
+}
