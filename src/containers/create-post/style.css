@@ -25,12 +25,14 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-color: rgba(255, 255, 255, 0.11);
+    resize: none;
 }
 
 #image-preview {
     display: none;
     max-height: 150px;
     border-radius: 5px;
+    margin: 0 0 8px 0;
 }
 
 .createPost__imageUpload > input {
@@ -39,6 +41,9 @@
 
 .createPost__uploadBtn {
     border: none;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.11);
+    border-radius: 5px;
 }
 
 .createPost__bottom {
