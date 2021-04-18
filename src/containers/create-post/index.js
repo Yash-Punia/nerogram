@@ -88,8 +88,10 @@ export default function CreatePost() {
                 </div>
             ) : (
                 <div className="createPost__loggedOut">
-                <SignInBtn/>
-                <p>to Post and Comment</p>
+                    <img src={process.env.PUBLIC_URL + 'logo192.png'}/>
+                    <h1>Welcome to NEROGRAM!</h1>
+                    <SignInBtn/>
+                    <p>to Post,Comment and Check Feed</p>
                 </div>
             )}
         </div>

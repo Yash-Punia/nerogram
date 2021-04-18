@@ -9,7 +9,10 @@ export default function Navbar() {
 
     return (
         <div className="navbar">
-            <p>Nerogram</p>
+            <div className="navbar__logo">
+                <img src={process.env.PUBLIC_URL + 'logo192.png'} />
+                <p>Nerogram</p>
+            </div>
             {user ? <img className="navbar__image" src={user.photoURL}></img> : <SignInBtn />}
         </div>
     )

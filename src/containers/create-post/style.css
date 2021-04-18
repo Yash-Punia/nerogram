@@ -11,6 +11,10 @@
     flex-direction: column;
 }
 
+.createPost__loggedOut > h1 {
+    margin-bottom: 20px;
+}
+
 .createPost__loggedIn {
     background: rgba(255, 255, 255, 0.11);
     width: 100%;

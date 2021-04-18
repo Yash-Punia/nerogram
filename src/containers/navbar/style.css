@@ -6,12 +6,23 @@
     background: rgba(255, 255, 255, 0.11);
 }
 
+.navbar__logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo > img {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+}
+
 .navbar__image {
     height: 35px;
     border-radius: 8px;
 }
 
-.navbar > p {
+.navbar__logo > p {
     font-weight: 600;
     letter-spacing: 3px;
 }
