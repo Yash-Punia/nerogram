@@ -46,10 +46,14 @@ export default function CreatePost() {
                         caption: caption,
                         postImageURL: imageURL,
                         userPhotoURL: user.photoURL,
-                        username: user.email.replace("@gmail.com","")
+                        username: user.displayName
                     })
                 })
             })
+            setCaption("");
+            setProgress(0);
+            setImage(null);
+            document.getElementById('image-preview').style.display='none';
         }
     }
 
@@ -83,9 +87,9 @@ export default function CreatePost() {
                     </div>
                 </div>
             ) : (
-                <div>
+                <div className="createPost__loggedOut">
                 <SignInBtn/>
-                <p style={{ marginLeft: "12px"}}>to Post and Comment</p>
+                <p>to Post and Comment</p>
                 </div>
             )}
         </div>
