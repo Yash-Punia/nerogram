@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { SignInBtn } from '../../components'
+import { SignOutBtn } from '../../components'
 import { UserContext } from '../../context/user'
 import "./style.css"
 
@@ -13,7 +14,9 @@ export default function Navbar() {
                 <img src={process.env.PUBLIC_URL + 'logo192.png'} />
                 <p>Nerogram</p>
             </div>
-            {user ? <img className="navbar__image" src={user.photoURL}></img> : <SignInBtn />}
+            <div>
+                {!user ? <></> : <SignOutBtn />}  
+            </div>
         </div>
     )
 }
