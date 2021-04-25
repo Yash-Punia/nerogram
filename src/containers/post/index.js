@@ -2,10 +2,25 @@ import React, { useState, useContext } from 'react'
 import { Comment, CommentInput } from '../../components';
 import { UserContext } from '../../context/user';
 import { db, storage } from '../../firebase';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import "./style.css"
 
-export default function Post({userPhotoURL, username, id, postImageURL, caption, comments}) {
+export default function Post({userPhotoURL, username, id, postImageURL, caption, comments, likes}) {
     const [user, setUser] = useContext(UserContext).user;
+    const [postLikes, setPostLikes] = useState(likes)
+
+    const likePost = () => {
+        const newLikes = postLikes+1;
+        setPostLikes(newLikes);
+        db.collection("posts").doc(id).update({
+            likes: newLikes
+        }).then(() => {
+            console.log("Likes Updated");
+        }).catch((err) => {
+            console.log(`Like Updation Error: ${err}`)
+        })
+    }
 
     const deletePost = () => {
         // delete image from firebase storage
@@ -35,7 +50,7 @@ export default function Post({userPhotoURL, username, id, postImageURL, caption,
                     <img src={userPhotoURL}/>
                     <p style={{marginLeft:"16px"}}>{username}</p>
                 </div>
-            <button onClick={deletePost} className="post__delete">Delete</button>
+            {user.displayName == username ? <button onClick={deletePost} className="post__delete">Delete</button> : <></>}
             </div>
 
             {/* POST IMAGE */}
@@ -43,6 +58,12 @@ export default function Post({userPhotoURL, username, id, postImageURL, caption,
                 <img className="post__image" src={postImageURL}/>
             </div>
 
+            {/* LIKES */}
+            <div onClick={likePost}>
+                <FavoriteIcon/>
+                <p>{postLikes} likes</p>
+            </div>
+            
             {/* POST CAPTION */}
             <div className="post__caption">
                 <span style={{color:"#ff0066"}}><strong>{username}:</strong></span>

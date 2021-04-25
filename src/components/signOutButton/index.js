@@ -9,7 +9,7 @@ export default function SignOutButton() {
 
     const signOutBtnClick = async () => {
         let userBySignOut = await logout();
-        if(userBySignOut) setUser(userBySignOut) 
+        if(userBySignOut) setUser(null) 
     }
 
     return (

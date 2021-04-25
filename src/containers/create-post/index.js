@@ -46,7 +46,8 @@ export default function CreatePost() {
                         caption: caption,
                         postImageURL: imageURL,
                         userPhotoURL: user.photoURL,
-                        username: user.displayName
+                        username: user.displayName,
+                        likes: 0
                     })
                 })
             })

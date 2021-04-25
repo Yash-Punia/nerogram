@@ -30,6 +30,7 @@ export default function Feed() {
                             postImageURL={post.postImageURL}
                             caption={post.caption}
                             comments={post.comments}  
+                            likes={post.likes}
                         />
             })}
         </div>
