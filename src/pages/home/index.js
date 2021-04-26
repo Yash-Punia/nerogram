@@ -6,12 +6,15 @@ import Feed from '../../containers/feed'
 import { UserContext } from '../../context/user'
 
 export default function Home() {
+    const img = process.env.PUBLIC_URL + 'aurora.jpeg' 
     const [user, setUser] = useContext(UserContext).user;
     return (
-        <div className="home">
-            <Navbar/>
-            <CreatePost/>
-            {user ? (<Feed/>) : <></>}
+        <div className="wrapper" style={{background:`url(${img})`,backgroundAttachment:'fixed', backgroundSize:'cover', height:'100%', width: '100%'}}>
+            <div className="home">
+                <Navbar/>
+                <CreatePost/>
+                {user ? (<Feed/>) : <></>}
+            </div>
         </div>
     )
 }
