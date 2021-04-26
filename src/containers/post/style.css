@@ -1,5 +1,7 @@
 .post {
     background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.11));
+    box-shadow: 0 3px 6px rgba(0,0,0,0.11), 0 3px 6px rgba(0,0,0,0.05);
+
     padding: 16px;
     border-radius: 16px;
     width: 90vw;
